@@ -3,7 +3,7 @@ name: generate animation
 on:
   # run automatically every 6 hours
   schedule:
-    - cron: "0 */6 * * *" 
+    - cron: "0 6 * * *" 
   
   # run on every push on the main branch
   push:
