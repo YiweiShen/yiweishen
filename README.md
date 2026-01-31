@@ -15,6 +15,6 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-<!-- ![](https://raw.githubusercontent.com/YiWeiShen/yiweishen/snk/github-contribution-grid-snake.svg) -->
+![](https://raw.githubusercontent.com/YiWeiShen/yiweishen/snk/github-contribution-grid-snake.svg)
 
-![](game.gif)
+![](https://raw.githubusercontent.com/YiWeiShen/yiweishen/space-shooter-gif/gh-space-shooter.gif)

@@ -22,13 +22,3 @@ jobs:
         uses: YiweiShen/gh-space-shooter@v1.0.2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          output-path: 'game.gif'
-          strategy: 'random'
-
-      - name: Commit  GIF
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add game.gif
-          git commit -m "Update space shooter GIF" || exit 0
-          git push
