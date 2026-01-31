@@ -1,14 +1,14 @@
 name: generate animation
 
-on:
-  # run automatically at 06:00.
-  schedule:
-    - cron: "0 6 * * *" 
-  
-  # run on every push on the main branch
-  push:
-    branches:
-    - main
+# on:
+#   # run automatically at 06:00.
+#   schedule:
+#     - cron: "0 6 * * *"
+
+#   # run on every push on the main branch
+#   push:
+#     branches:
+#     - main
 
 jobs:
   generate:
@@ -21,7 +21,7 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: dist/github-contribution-grid-snake.svg
-            
+
         env:
           # a github token is required to fetch the contribution calendar from github API
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
