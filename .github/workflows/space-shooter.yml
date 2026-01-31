@@ -32,14 +32,14 @@ jobs:
 
       - name: Optimize GIF size
         run: |
-          # Generate palette
+          # Generate optimized palette (fewer colors)
           ffmpeg -y -i game.gif \
-            -vf "fps=12,scale=480:-1:flags=lanczos,palettegen" \
+            -vf "fps=8,scale=iw:ih:flags=lanczos,palettegen=max_colors=96" \
             palette.png
 
-          # Apply palette (THIS must use -filter_complex)
+          # Apply palette with ordered dithering
           ffmpeg -y -i game.gif -i palette.png \
-            -filter_complex "fps=12,scale=480:-1:flags=lanczos[x];[x][1:v]paletteuse" \
+            -filter_complex "fps=8,scale=iw:ih:flags=lanczos[x];[x][1:v]paletteuse=dither=bayer:bayer_scale=4" \
             game_optimized.gif
 
           mv game_optimized.gif game.gif
