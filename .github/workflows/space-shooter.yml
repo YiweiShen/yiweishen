@@ -18,37 +18,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate game GIF
-        uses: czl9707/gh-space-shooter@v1
+      - name: Space Shooter GIF Generator
+        uses: YiweiShen/gh-space-shooter@v1.0.2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           output-path: 'game.gif'
           strategy: 'random'
 
-      - name: Install ffmpeg
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg
-
-      - name: Optimize GIF size
-        run: |
-          # Generate optimized palette (fewer colors)
-          ffmpeg -y -i game.gif \
-            -vf "fps=8,scale=iw:ih:flags=lanczos,palettegen=max_colors=96" \
-            palette.png
-
-          # Apply palette with ordered dithering
-          ffmpeg -y -i game.gif -i palette.png \
-            -filter_complex "fps=8,scale=iw:ih:flags=lanczos[x];[x][1:v]paletteuse=dither=bayer:bayer_scale=4" \
-            game_optimized.gif
-
-          mv game_optimized.gif game.gif
-          rm palette.png
-
-      - name: Commit optimized GIF
+      - name: Commit  GIF
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add game.gif
-          git commit -m "Update optimized space shooter GIF" || exit 0
+          git commit -m "Update space shooter GIF" || exit 0
           git push
