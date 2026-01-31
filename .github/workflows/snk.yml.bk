@@ -1,14 +1,14 @@
 name: generate animation
 
-# on:
-#   # run automatically at 06:00.
-#   schedule:
-#     - cron: "0 6 * * *"
+on:
+  # run automatically at 06:00.
+  schedule:
+    - cron: '0 6 * * *'
 
-#   # run on every push on the main branch
-#   push:
-#     branches:
-#     - main
+  # run on every push on the main branch
+  push:
+    branches:
+      - main
 
 jobs:
   generate:
