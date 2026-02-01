@@ -17,4 +17,4 @@ Here are some ideas to get you started:
 
 ![](https://raw.githubusercontent.com/YiWeiShen/yiweishen/snk/github-contribution-grid-snake.svg)
 
-![](https://raw.githubusercontent.com/YiWeiShen/yiweishen/space-shooter-gif/gh-space-shooter.gif)
+![](https://raw.githubusercontent.com/YiWeiShen/yiweishen/space-shooter/gh-contribution-grid.gif)
