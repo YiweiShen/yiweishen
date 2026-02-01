@@ -22,3 +22,4 @@ jobs:
         uses: YiweiShen/gh-space-shooter@v1.0.2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          target-branch: 'space-shooter-gif'
