@@ -22,8 +22,13 @@ jobs:
         uses: YiweiShen/gh-space-shooter@v1.0.5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          output-path: dist/gh-contribution-grid.gif
+          output-path: gh-contribution-grid.gif
           commit: false
+
+      - name: Move GIF to dist folder
+        run: |
+          mkdir -p dist
+          mv gh-contribution-grid.gif dist/
 
       # push the content of <build_dir> to a branch
       # the content will be available at https://raw.githubusercontent.com/<github_user>/<repository>/<target_branch>/<file> , or as github page
